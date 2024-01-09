@@ -1,0 +1,4 @@
+.warp {
+  width: calc(100% - 64px);
+  overflow-wrap: break-word;
+}
