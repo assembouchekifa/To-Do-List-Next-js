@@ -50,12 +50,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-start justify-start p-12 sm:p-24">
-      <h1 className="text-3xl text-center w-full mb-5  ">Todo List</h1>
-      <h3 className="text-xl mb-3">Enter the task :</h3>
+    <main className="flex min-h-screen flex-col items-start justify-start p-12 sm:p-24 bg-black">
+      <h1 className="text-3xl text-center w-full mb-5 text-white ">
+        Todo List
+      </h1>
+      <h3 className="text-xl text-white mb-3">Enter the task :</h3>
       <div className="flex w-full mb-7 justify-center ">
         <input
-          className="focus:outline-none flex-1 bg-transparent border-b-2  "
+          className="focus:outline-none flex-1 text-white bg-transparent border-b-2  "
           type="text"
           ref={inpRef}
           value={inpValu}
@@ -63,24 +65,27 @@ export default function Home() {
             setInpValu(e.target.value);
           }}
         />
-        <button className=" p-2 border-s-2 border-b-2 " onClick={hundelAdd}>
+        <button
+          className=" p-2 border-s-2 text-white border-b-2 "
+          onClick={hundelAdd}
+        >
           <IoMdAdd />
         </button>
       </div>
       <div
         key={v4()}
-        className="flex flex-col justify-start w-full items-start  "
+        className="flex text-white flex-col justify-start w-full items-start  "
       >
         {todo?.map((e, i) => {
           return (
             <div
               key={v4()}
-              className="flex w-full justify-start items-start mb-5 "
+              className="flex text-white w-full justify-start items-start mb-5 "
             >
               <div
                 style={e.don ? { textDecoration: "line-through" } : undefined}
                 className={classNames(
-                  "flex-1 p-2 border-s-2 border-t-2 border-b-2",
+                  "flex-1 text-white p-2 border-s-2 border-t-2 border-b-2",
                   st.warp
                 )}
                 onClick={() => {
@@ -90,7 +95,7 @@ export default function Home() {
                 {e.text}
               </div>
               <button
-                className=" p-2 border-t-2 border-e-2 "
+                className=" p-2 border-t-2 text-white border-e-2 "
                 onClick={() => {
                   hundelDell(i);
                 }}
