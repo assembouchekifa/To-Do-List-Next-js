@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import Link from "next/link";
 import React, { useState } from "react";
 import { RiEye2Fill, RiEyeCloseFill } from "react-icons/ri";
 import { RingLoader } from "react-spinners";
@@ -36,6 +37,7 @@ function Login() {
       })
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("name", res.data.data.name);
         setError("");
         setOnLogin(false);
         location.replace("/");
@@ -106,11 +108,11 @@ function Login() {
           />
         )}
       </div>
+      <Link className="text-xl" href={"/sign"}>
+        If you do not have an account click here
+      </Link>
     </form>
   );
 }
-
-// assemt@ggr.ce
-// Assem1010114101011101000110101110101
 
 export default Login;
